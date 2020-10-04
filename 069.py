@@ -7,8 +7,9 @@ while True:
     print('CADASTRO DE USUÁRIO')
     print('-' * 30)
     age = int(input('INFORME A IDADE: '))
-    gen = str(input('Sexo: [M/F] ')).strip().upper()
-    cont +=1
+    gen = ' '
+    while gen not in 'MF':
+        gen = str(input('Sexo: [M/F] ')).strip().upper()
     print('-' * 30)
     if gen == 'M':
         contm +=1
@@ -17,8 +18,11 @@ while True:
     if age <= 20:
         if gen == 'F':
             jvm += 1
-    val = str(input('QUER CONTINUAR? [S/N] ')).strip().upper()
+    val = ' '
+    while val not in 'SN':
+        val = str(input('QUER CONTINUAR? [S/N] ')).strip().upper()
+    cont += 1
     if val == 'N':
         break
-print(f'Total de pessoas com mais de 18 anos: {adt}\nQuantidade de homens cadastrados = {contm}\n'
+print(f'Total de pessoas com mais de 18 anos = {adt}\nQuantidade de homens cadastrados = {contm}\n'
       f'Quantidade de mulheres com menos de 20 anos = {jvm}')
